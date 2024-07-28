@@ -2,6 +2,7 @@
 {
   imports = [
     ./pkgs
+    ./programs
   ];
   home = {
     stateVersion = "${curversion}";

@@ -20,7 +20,7 @@
     discord
     qbittorrent
     btop
-    gnome.gnome-tweaks
+    gnome-tweaks
     bibata-cursors
     veracrypt
   ];

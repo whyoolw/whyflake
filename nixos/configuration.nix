@@ -9,6 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./modules/games.nix
+      ./modules/user.nix
+      ./modules/fonts.nix
+      ./modules/zram.nix
+      ./modules/neovim.nix
     ];
 
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -71,15 +75,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.whyoolw = {
-    isNormalUser = true;
-    description = "whyoolw";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-    #  thunderbird
-    ];
-  };
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -91,7 +87,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #  wget
 vscode
 vesktop
-neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
