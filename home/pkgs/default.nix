@@ -16,12 +16,18 @@
     rofi-wayland
     ranger
     nwg-look
-    nemo 
     discord
     qbittorrent
     btop
     gnome-tweaks
     bibata-cursors
     veracrypt
+    swww
+    clipman
+    waybar
+    ntfs3g
+    hyprshot
+    grim
+    adw-gtk3
   ];
 }

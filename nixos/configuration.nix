@@ -13,6 +13,8 @@
       ./modules/fonts.nix
       ./modules/zram.nix
       ./modules/neovim.nix
+      ./modules/envh.nix
+      ./modules/gnomepolkit.nix
     ];
 
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
