@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     fastfetch
-    kitty
     pavucontrol
     google-chrome
     vim
@@ -14,20 +13,25 @@
     mpv
     hyprpicker
     rofi-wayland
-    ranger
     nwg-look
     discord
     qbittorrent
     btop
-    gnome-tweaks
-    bibata-cursors
     veracrypt
     swww
     clipman
     waybar
-    ntfs3g
     hyprshot
     grim
-    adw-gtk3
+    vscode
+    vesktop
+    nautilus
+    gnome-tweaks
+    gpu-screen-recorder-gtk
+    prismlauncher
+    #over-spotify
+    spicetify-cli
+    wl-clipboard
+    xclip
   ];
 }

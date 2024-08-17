@@ -14,7 +14,7 @@
     };
     extraPortals = with pkgs; [
       over-hypr-portal
-      #xdg-desktop-portal-gtk    
+      #xdg-desktop-portal-gtk 
     ];
   };
   environment.systemPackages = with pkgs; [
