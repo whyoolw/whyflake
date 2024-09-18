@@ -7,14 +7,12 @@
     vim
     git
     gh 
-    _64gram
+    materialgram
     xdg-utils
     imv
     mpv
     hyprpicker
     rofi-wayland
-    nwg-look
-    discord
     qbittorrent
     btop
     veracrypt
@@ -28,10 +26,11 @@
     nautilus
     gnome-tweaks
     gpu-screen-recorder-gtk
-    prismlauncher
     #over-spotify
     spicetify-cli
     wl-clipboard
     xclip
+    gnome-disk-utility
+    ntfs3g
   ];
 }

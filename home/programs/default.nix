@@ -2,7 +2,7 @@
 {
   imports = [
     ./fish
-    ./hyprland
+    #./hyprland
     ./kitty
     #./ranger
   ];

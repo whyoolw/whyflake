@@ -32,20 +32,18 @@
       inherit system;
       config = {
         allowUnfree = true;
+        cudaSupport = true;
       };
       overlays = [
         (final: prev: {
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
-          over-hyprland = hyprland.packages.${prev.system}.hyprland;                            # hyprland overlay
-          over-hypr-portal = xdghypr.packages.${prev.system}.xdg-desktop-portal-hyprland;
-          #over-spotify = (prev.callPackage ./overlays/spoti.nix {});
         })
       ];
     };
   in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {
-      inherit inputs system pkgs;
+      inherit inputs system pkgs curversion;
       };
       modules = [
         ./nixos/configuration.nix
