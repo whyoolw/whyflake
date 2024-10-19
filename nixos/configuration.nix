@@ -17,9 +17,14 @@
       ./modules/gnomepolkit.nix
       ./modules/auto-cpufreq.nix
       ./modules/gpu.nix
+      ./modules/sound.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+    warn-dirty = false;
+  };
 
   # Bootloader.
 
@@ -27,40 +32,24 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "nvidia" ];
   hardware.graphics.enable = true; 
-  networking.hostName = "nixos"; 
-
+  networking.hostName = "thinkpad"; 
   networking.networkmanager.enable = true;
 
- 
   time.timeZone = "Europe/Riga";
-
   i18n.defaultLocale = "en_US.UTF-8";
 
-
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  services.flatpak.enable = true;
-
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
+  services = {
+    flatpak.enable = true;
+    printing.enable = false;
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+      xkb.layout = "us";
+      xkb.variant = "";
+    };
   };
-
-  services.printing.enable = true;
-
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = false;
-  };
-
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
   ];

@@ -5,18 +5,20 @@
     package = pkgs.kitty;
     extraConfig = "! FONT
 
-font_family	Source Code Pro Bold
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+ font_family	Source Code Pro Bold
+ bold_font        auto
+ italic_font      auto
+ bold_italic_font auto
 
 font_size 10.0
 
 editor nvim
 
-baackground_opacity 0.1
+background_opacity 0.9
 
 window_margin_width 15
+
+
 
 
 

@@ -2,20 +2,9 @@
   description = "whyflake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    xdghypr = {
-      url = "github:hyprwm/xdg-desktop-portal-hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,7 +12,12 @@
   };
   
 
-  outputs = { self, nixpkgs, home-manager, xdghypr, hyprland, ... }@inputs:
+  outputs = { 
+    self
+  , nixpkgs
+  , home-manager
+  , hyprland
+  , ... }@inputs:
   
   let
     system = "x86_64-linux"; 
@@ -32,16 +26,18 @@
       inherit system;
       config = {
         allowUnfree = true;
-        cudaSupport = true;
+        #cudaSupport = true;
       };
       overlays = [
         (final: prev: {
+          hyprland = inputs.hyprland.packages.${prev.system}.hyprland;
+          xdg-desktop-portal-hyprland = inputs.hyprland.packages.${prev.system}.xdg-desktop-portal-hyprland;
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
         })
       ];
     };
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
       specialArgs = {
       inherit inputs system pkgs curversion;
       };

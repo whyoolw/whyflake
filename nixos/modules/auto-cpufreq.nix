@@ -8,15 +8,15 @@
       settings = {
         charger = {
           governor = "performance";
-          scaling_min_freq = 1600000;
-          scaling_max_freq = 3800000;
+          scaling_min_freq = 2600000;
+          scaling_max_freq = 4500000;
           turbo = "never";
         };
 
         battery = {
           governor = "powersave";
-          scaling_min_freq = 400000;
-          scaling_max_freq = 2000000;
+          scaling_min_freq = 800000;
+          scaling_max_freq = 1600000;
           turbo = "never";
         };
       };

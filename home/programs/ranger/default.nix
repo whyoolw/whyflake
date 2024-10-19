@@ -27,8 +27,12 @@ ext svg, has imv, X, flag f = imv "$@"
 ext rar, has file-roller, X, flag f = file-roller "$@"
 ext jsonc, has nvim, flag f = nvim "$@"
 label editor = "$EDITOR" -- "$@"
-label pager  = "$PAGER" -- "$@"'';  
+label pager  = "$PAGER" -- "$@"'';
+
+
 home.file.".config/ranger/rc.conf".text = ''
+
+
 set preview_images true
 set preview_images_method kitty
 default_linemode devicons
@@ -58,6 +62,8 @@ map P shell nemo .
 copymap zi Z
 map <C-F> shell fzf 
 
+map <C-e> shell /home/$USER/PortProton/data/scripts/start.sh %s --and-exit
+map <C-d> shell dragon-drop -a -x %p --and-exit
 
 '';
   

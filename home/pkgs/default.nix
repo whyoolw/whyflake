@@ -21,16 +21,20 @@
     waybar
     hyprshot
     grim
+    hyprpicker
     vscode
     vesktop
     nautilus
+    nemo
     gnome-tweaks
     gpu-screen-recorder-gtk
     #over-spotify
     spicetify-cli
-    wl-clipboard
+    #wl-clipboard
+    cliphist
     xclip
     gnome-disk-utility
     ntfs3g
+    xdragon
   ];
 }

@@ -4,6 +4,6 @@
     ./fish
     #./hyprland
     ./kitty
-    #./ranger
+    ./ranger
   ];
 }
