@@ -33,6 +33,7 @@
           hyprland = inputs.hyprland.packages.${prev.system}.hyprland;
           xdg-desktop-portal-hyprland = inputs.hyprland.packages.${prev.system}.xdg-desktop-portal-hyprland;
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
+          rewaita = (prev.callPackage ./overlays/rewaita.nix {});
         })
       ];
     };

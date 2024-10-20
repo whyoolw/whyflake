@@ -4,6 +4,7 @@
     fastfetch
     pavucontrol
     google-chrome
+    firefox
     vim
     git
     gh 
@@ -18,7 +19,7 @@
     veracrypt
     swww
     clipman
-    waybar
+    #waybar
     hyprshot
     grim
     hyprpicker
@@ -36,5 +37,7 @@
     gnome-disk-utility
     ntfs3g
     xdragon
+    pywal
+    rewaita
   ];
 }

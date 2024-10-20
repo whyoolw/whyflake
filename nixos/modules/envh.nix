@@ -13,15 +13,15 @@
       "org.freedesktop.impl.portal.Screenshot" = "hyprland";
     };
     extraPortals = with pkgs; [
-      over-hypr-portal
-      #xdg-desktop-portal-gtk 
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland 
     ];
   };
   environment.systemPackages = with pkgs; [
   ];
   services = {
     displayManager.sessionPackages = [
-      pkgs.over-hyprland                        # hyprland session to be recognized by login managers
+      pkgs.hyprland
     ];
   };
 }

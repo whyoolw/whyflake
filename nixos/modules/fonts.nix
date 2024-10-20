@@ -15,11 +15,14 @@
       noto-fonts-cjk
       noto-fonts-emoji
       liberation_ttf
+      roboto
+      roboto-slab
+      fira
+      fira-sans
       fira-code
       fira-code-symbols
-      mplus-outline-fonts.githubRelease
-      dina-font
       proggyfonts
+      hack-font
     ]);
   };
 }
