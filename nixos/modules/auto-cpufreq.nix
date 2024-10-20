@@ -10,7 +10,7 @@
           governor = "performance";
           scaling_min_freq = 2600000;
           scaling_max_freq = 4500000;
-          turbo = "never";
+          turbo = "auto";
         };
 
         battery = {

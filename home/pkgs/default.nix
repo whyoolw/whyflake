@@ -27,10 +27,10 @@
     vesktop
     nautilus
     nemo
-    gnome-tweaks
+    #gnome-tweaks
     gpu-screen-recorder-gtk
     #over-spotify
-    spicetify-cli
+    #spicetify-cli
     #wl-clipboard
     cliphist
     xclip
@@ -39,5 +39,7 @@
     xdragon
     pywal
     rewaita
+    mangohud
+    goverlay
   ];
 }
