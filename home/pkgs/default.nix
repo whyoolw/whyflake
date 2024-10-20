@@ -8,7 +8,8 @@
     vim
     git
     gh 
-    materialgram
+    #materialgram
+    telegram-desktop
     xdg-utils
     imv
     mpv
@@ -31,7 +32,7 @@
     gpu-screen-recorder-gtk
     #over-spotify
     #spicetify-cli
-    #wl-clipboard
+    wl-clipboard
     cliphist
     xclip
     gnome-disk-utility
@@ -41,5 +42,9 @@
     rewaita
     mangohud
     goverlay
+    ranger
+    brightnessctl
+    pulseaudio
+    swaynotificationcenter
   ];
 }

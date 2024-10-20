@@ -1,13 +1,5 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
-  programs.ranger = {
-    enable = true;
-    package = pkgs.ranger;
-    settings = {
-
-    };
-    extraConfig = "";
-  };
 home.file.".config/ranger/rifle.cfg".text = ''
 ext pdf, has evince, X, flag f = evince "$@"
 ext img, has imv, X, flag f = imv "$@"
@@ -30,7 +22,7 @@ label editor = "$EDITOR" -- "$@"
 label pager  = "$PAGER" -- "$@"'';
 
 
-home.file.".config/ranger/rc.conf".text = ''
+home.file.".config/ranger/rc.conf".text = lib.mkForce ''
 
 
 set preview_images true
@@ -63,7 +55,7 @@ copymap zi Z
 map <C-F> shell fzf 
 
 map <C-e> shell /home/$USER/PortProton/data/scripts/start.sh %s --and-exit
-map <C-d> shell dragon-drop -a -x %p --and-exit
+map <C-d> shell dragon -a -x %p --and-exit
 
 '';
   

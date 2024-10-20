@@ -13,7 +13,7 @@
       ./modules/fonts.nix
       ./modules/zram.nix
       ./modules/neovim.nix
-      #./modules/envh.nix
+      ./modules/envh.nix
       ./modules/gnomepolkit.nix
       ./modules/auto-cpufreq.nix
       ./modules/gpu.nix
@@ -40,12 +40,13 @@
 
   services = {
     flatpak.enable = true;
+    fstrim.enable = true;
     printing.enable = false;
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
       displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
+      #desktopManager.gnome.enable = true;
       xkb.layout = "us";
       xkb.variant = "";
     };

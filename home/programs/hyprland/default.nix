@@ -2,10 +2,10 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.over-hyprland;
+    package = pkgs.hyprland;
     xwayland.enable = true;
     extraConfig = ''
-    monitor=eDP-1, 1920x1080@60, 0x0,1
+monitor=eDP-1, 1920x1080@60, 0x0,1
 monitor=HDMI-A-1, 1920x1080@60, 1920x0, 1
 monitor=eDP-1, 1920x1080@60, 0x0,1
 monitor=HDMI-A-1, 1920x1080@60, -1920x0, 1
@@ -17,15 +17,17 @@ exec-once =  wl-paste --watch cliphist store
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 exec-once = swww init
 exec-once = swww img /home/whyoolw/Pictures/wallpaper/0current.png
-exec-once = kdeconnect-indicator
+#exec-once = kdeconnect-indicator
 exec = ~/.config/hypr/scripts/auto.sh
-exec-once = spotify
+#exec-once = spotify
 #exec-once = thinkfan-ui
 exec-once = [workspace special as silent; tiled] kitty -e btop
 exec-once = [workspace special as silent; tiled] kitty -e watch -n 1 nvidia-smi
+exec-once = hyprctl setcursor Bibata-Modern-Ice 24
 
-env = HYPRCURSOR_THEME,Bibata-Modern-Ice
-env = HYPRCURSOR_SIZE,24
+
+#env = HYPRCURSOR_THEME,Bibata-Modern-Ice
+#env = HYPRCURSOR_SIZE,24
 #env = XCURSOR_THEME, Bibata-Modern-Ice
 #env = XCURSOR_SIZE,24
 #env = GTK_THEME,RosePine-Main-BL-LB
@@ -109,7 +111,7 @@ dwindle {
 master {
    
     	#new_is_master = 1
-    	no_gaps_when_only = true
+    	#no_gaps_when_only = true
 }
 
 

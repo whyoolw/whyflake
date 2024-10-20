@@ -3,12 +3,8 @@
   programs.waybar = {
     enable = true;
     package = pkgs.waybar;
-    settings = {
-
-    };
-    extraConfig = "";
   };
-  home.file.".config/waybar/config.json".text = ''// -*- mode: jsonc -*-
+  home.file.".config/waybar/config.jsonc".text = ''// -*- mode: jsonc -*-
 {	
 		"width": 920,
 		"height": 0,

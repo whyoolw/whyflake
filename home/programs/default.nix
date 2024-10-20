@@ -6,5 +6,8 @@
     ./kitty
     ./ranger
     ./rofi
+    ./waybar
+    ./nvim
+    ./fastfetch
   ];
 }
