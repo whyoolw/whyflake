@@ -26,13 +26,13 @@
     };
 
   fileSystems."/mnt/bine4" = 
-   { device = "/dev/nvme1n1p2";
+   { device = "/dev/disk/by-uuid/5896645a-9e7f-4846-a1d3-1625ef22fd30";
       fsType = "ext4";
       options = [  "nosuid" "nodev" "nofail" ];
    };
 
-  fileSystems."/mnt/bine1" = 
-   { device = "/dev/nvme0n1p1";
+  fileSystems."/mnt/bineM" = 
+   { device = "/dev/disk/by-uuid/cff08dd0-0c9d-4988-beb6-c72f7e93d912";
       fsType = "ext4";
       options = [  "nosuid" "nodev" "nofail" ];
    };

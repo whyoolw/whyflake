@@ -18,8 +18,8 @@ exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec-once = swww init
 exec-once = swww img /home/whyoolw/Pictures/wallpaper/0current.png
 #exec-once = kdeconnect-indicator
-exec = ~/.config/hypr/scripts/auto.sh
-#exec-once = spotify
+exec = hyprctl keyword '$LAPTOP_KB_ENABLED' "false" -r
+exec-once = com.spotify.Client
 #exec-once = thinkfan-ui
 exec-once = [workspace special as silent; tiled] kitty -e btop
 exec-once = [workspace special as silent; tiled] kitty -e watch -n 1 nvidia-smi
@@ -39,6 +39,8 @@ exec-once = hyprctl setcursor Bibata-Modern-Ice 24
 cursor {
   no_hardware_cursors = true
 }
+
+#render:explicit_sync=0
 
 input {
     	kb_layout = us,ru
@@ -141,7 +143,8 @@ bind = $mainMod, D, exec, rofi -show drun
 #bind = $mainMod, D, exec, anyrun
 bind = $mainMod, I, exec, rofi -show  emoji -show emoji
 bind=$mainMod,C,exec,hyprpicker -a && -u critical -t 4000 "$(wl-paste)"
-bind = $mainMod, V, exec, rofi -modi clipboard:/home/whyoolw/cliphist -show clipboard -show-icons
+bind = $mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy
+#bind = $mainMod, V, exec, rofi -modi clipboard:/home/whyoolw/cliphist -show clipboard -show-icons
 #bind = $mainMod, V, exec, clipman pick --tool="rofi" --tool-args="-show drun -monitor 1" --max-items=30
 bind = $mainMod SHIFT, S, exec,  hyprshot -m region -z
 bind = $mainMod, P, exec, .config/rofi/powermenu/powermenu.sh

@@ -50,7 +50,7 @@
 
         {
             "type": "packages",
-            "format": "{} pacman",
+            "format": "{} nix-pkgs",
             "key": " ",
             "keyColor": "34"
         },

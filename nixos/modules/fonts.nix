@@ -23,6 +23,8 @@
       fira-code-symbols
       proggyfonts
       hack-font
+      open-sans
     ]);
+    
   };
 }

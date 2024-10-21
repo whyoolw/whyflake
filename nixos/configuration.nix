@@ -31,7 +31,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "nvidia" ];
-  hardware.graphics.enable = true; 
   networking.hostName = "thinkpad"; 
   networking.networkmanager.enable = true;
 

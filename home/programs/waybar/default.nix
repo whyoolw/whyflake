@@ -169,8 +169,8 @@
             "warning": 40,
             "critical": 25
         },
-        "format": "  {icon} {capacity}",
-	"format-alt": "{icon} {capacity}",
+        "format": "  {icon}  {capacity}",
+	"format-alt": "{icon}  {capacity}",
         "format-charging":"{icon} ",
         "format-plugged": "{icon} ",
         "format-full": "{icon} !",
@@ -191,7 +191,7 @@
 '';
 
 home.file.".config/waybar/style.css".text = ''* {
-	font-family: googlesans;
+	font-family: Source Code Pro Bold;
 	font-weight: bold;
 	min-height: 0;
 	border-radius: 16 16 0 0;

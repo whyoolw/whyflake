@@ -5,9 +5,11 @@
     pavucontrol
     google-chrome
     firefox
-    vim
     git
-    gh 
+    gh
+    wget 
+    unzip
+    unrar
     #materialgram
     telegram-desktop
     xdg-utils
@@ -30,8 +32,8 @@
     nemo
     #gnome-tweaks
     gpu-screen-recorder-gtk
-    #over-spotify
-    #spicetify-cli
+    #spotify
+    spicetify-cli
     wl-clipboard
     cliphist
     xclip
@@ -42,9 +44,20 @@
     rewaita
     mangohud
     goverlay
+    gamemode
     ranger
     brightnessctl
     pulseaudio
     swaynotificationcenter
+    obs-studio
+    oh-my-fish
+    gimp
+    onlyoffice-bin
+    onefetch
+    lutris
+    tokei
+    yt-dlp
+    prismlauncher
+    fzf
   ];
 }
