@@ -2,14 +2,15 @@
 {
   imports = [
     ./fish
-    ./hyprland
+    #./hyprland
     ./kitty
     ./ranger
     ./rofi
     ./waybar
     ./nvim
     ./fastfetch
-    ./swaync
+    #./swaync
     ./mangohud
+    ./niri
   ];
 }

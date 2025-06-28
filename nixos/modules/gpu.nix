@@ -33,12 +33,17 @@
       powerManagement.enable = true;
       forceFullCompositionPipeline = true;
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "560.35.03";
-        sha256_64bit = "sha256-8pMskvrdQ8WyNBvkU/xPc/CtcYXCa7ekP73oGuKfH+M=";
-        openSha256 = "sha256-/32Zf0dKrofTmPZ3Ratw4vDM7B+OgpC4p7s+RHUjCrg=";
-        settingsSha256 = "sha256-kQsvDgnxis9ANFmwIwB7HX5MkIAcpEEAHc8IBOLdXvk=";
+        version = "575.51.02";
+        sha256_64bit = "sha256-XZ0N8ISmoAC8p28DrGHk/YN1rJsInJ2dZNL8O+Tuaa0=";
+        openSha256 = "sha256-NQg+QDm9Gt+5bapbUO96UFsPnz1hG1dtEwT/g/vKHkw=";
+        settingsSha256 = "sha256-6n9mVkEL39wJj5FB1HBml7TTJhNAhS/j5hqpNGFQE4w=";
         sha256_aarch64 = lib.fakeSha256;
         persistencedSha256 = lib.fakeSha256;
+      };
+      prime = {
+       # sync.enable = true;
+        nvidiaBusId = "PCI:14:0:0";
+        intelBusId = "PCI:0:2:0";
       };
     };
   };

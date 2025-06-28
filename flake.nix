@@ -3,8 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     hyprland.url = "github:hyprwm/Hyprland";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,15 +31,15 @@
       };
       overlays = [
         (final: prev: {
-          hyprland = inputs.hyprland.packages.${prev.system}.hyprland;
-          xdg-desktop-portal-hyprland = inputs.hyprland.packages.${prev.system}.xdg-desktop-portal-hyprland;
+ #         hyprland = inputs.hyprland.packages.${prev.system}.hyprland;
+  #        xdg-desktop-portal-hyprland = inputs.hyprland.packages.${prev.system}.xdg-desktop-portal-hyprland;
           over-steam = (import ./overlays/steam.nix { inherit pkgs; });
           rewaita = (prev.callPackage ./overlays/rewaita.nix {});
         })
       ];
     };
   in {
-    nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.thinkpad = inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
       inherit inputs system pkgs curversion;
       };

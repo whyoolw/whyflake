@@ -6,10 +6,10 @@
   };
   home.file.".config/waybar/config.jsonc".text = ''// -*- mode: jsonc -*-
 {	
-		"width": 920,
+		"width": 620,
 		"height": 0,
     		"layer": "top",
-    		"position": "bottom",
+    		"position": "top",
 		"exclusive": true,
 		"passthrough": false,
 		"spacing": 5,
@@ -17,13 +17,22 @@
 		"margin-top": 0,
 		"fixed-center": true,
 		"reload_style_on_change": true,
-		"modules-left": ["hyprland/workspaces"],
-		"modules-center": ["custom/notifications","clock","group/powerB"],
-		"modules-right": ["group/ttray"],
+		"modules-left": ["custom/notifications","tray", "niri/language" ],
+		"modules-center": [
+			"clock",
+			],
+		"modules-right": [
+			
+			"backlight",
+			"pulseaudio",
+			"battery",
+			"network",
+
+			],
 
 
 
-"hyprland/workspaces": {
+"niri/workspaces": {
   "disable-scroll": true,
   "show-special": true,
   "on-scroll-up": "hyprctl dispatch workspace -1",
@@ -52,7 +61,7 @@
         	"format-wifi": "󰤨 ",
         	"format-ethernet": " ",
         	"format-linked": " ",
-        	"format-disconnected": "󰤭",
+        	"format-disconnected": "󰤭 ",
           "on-click": "python ~/.config/rofi/network/network.py"
 	},
 
@@ -61,13 +70,13 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "notification": "<span foreground='#DB4740'>󰂜</span>",
       "none": "󰂜",
-      "dnd-notification":"<span foreground='#DB4740'><sup>󰵚</sup></span>",
-      "dnd-none": "󰂛",
-      "inhibited-notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-notification":"<span foreground='#DB4740'></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='#DB4740'></span>",
       "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='#DB4740'><sup></sup></span>",
+      "dnd-inhibited-notification": "<span foreground='#DB4740'></span>",
       "dnd-inhibited-none": ""
     },
     "return-type": "json",
@@ -77,6 +86,8 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
+
+
 "group/powerB": {
 	 "orientation": "horizontal",
 	 "drawer": {
@@ -158,7 +169,7 @@
   },
  
         	
-    	"hyprland/language": {
+    	"niri/language": {
         	"format": "{}",
 			"format-en": "en",
 			"format-ru": "ru"
@@ -169,8 +180,8 @@
             "warning": 40,
             "critical": 25
         },
-        "format": "  {icon}  {capacity}",
-	"format-alt": "{icon}  {capacity}",
+        "format": "  {icon} {capacity}",
+	"format-alt": "{icon} {capacity}",
         "format-charging":"{icon} ",
         "format-plugged": "{icon} ",
         "format-full": "{icon} !",
@@ -190,11 +201,12 @@
 }
 '';
 
-home.file.".config/waybar/style.css".text = ''* {
-	font-family: Source Code Pro Bold;
+home.file.".config/waybar/style.css".text = ''
+* {
+	font-family: googlesans;
 	font-weight: bold;
-	min-height: 0;
-	border-radius: 16 16 0 0;
+	border-radius: 0;
+	font-size: 14px;
 }
 
 window#waybar {
@@ -242,17 +254,14 @@ window#waybar {
 #tray {
 	background: @background;
 	color: @color9;
-	font-size: 14px;
-	padding: 0 8 0 8px;
-	margin: 5 10px;
-	border: solid 2px @color2;
-	border-radius: 12;
+	padding: 0 0 0 0;
+	margin: 3 0 0 0;
 
 }
 #battery {
 	background: @background;
 	color: @color6;
-	padding: 0 0 0 0;
+	padding: 0 1 0 1;
 }
 
 #network {
@@ -263,40 +272,34 @@ window#waybar {
 
 #custom-notifications {
 	color: @color2;
-	padding: 5 8 5 5;
+	margin: 5 5 0 8;
 	font-size: 14pt;
 }
 
 #pulseaudio {
 	background: @background;
 	color: @color6;
-	padding: 0 8 0 0;
-	font-size: 15;
+
 }
 
 #clock {
 	background: @background;
 	color: @color6;
-	font-size: 17px;
-	padding: 5 5px;
+	font-size: 16px;
 
 }
 
 #language {
 	background: @background;
 	color: @color6;
-	padding: 0 5 0 8;
-	margin: 1 10 1 1px;
-	font-size: 16px;
-	border-radius: 6
+	padding: 0 0 0 8;
+	margin: 4 0 0 0;
+	font-size: 15px;
 }
 #backlight {
 	background: @background;
 	color: @color6;
-	padding: 0 0 0 10;
-	margin: 1 10 1 1px;
-	font-size: 16px;
-	border-radius: 6
+	margin: 0 6 0 1px;
 
 }
 '';

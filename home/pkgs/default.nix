@@ -27,7 +27,7 @@
     grim
     hyprpicker
     vscode
-    vesktop
+    discord
     nautilus
     nemo
     #gnome-tweaks
@@ -59,5 +59,9 @@
     yt-dlp
     prismlauncher
     fzf
+    hyprland
+    clipse
+    xwayland-satellite
+    
   ];
 }

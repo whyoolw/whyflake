@@ -8,22 +8,22 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "uas" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f059b9ef-8d4c-45f6-b774-87135cc8b161";
-      fsType = "f2fs";
-      options = [ "compress_algorithm=zstd:6" ];
+    { device = "/dev/disk/by-uuid/4804d829-7f68-4140-8e1d-29e63ee57407";
+      fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/419C-2FB9";
+    { device = "/dev/disk/by-uuid/CEF1-8965";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+
 
   fileSystems."/mnt/bine4" = 
    { device = "/dev/disk/by-uuid/5896645a-9e7f-4846-a1d3-1625ef22fd30";
@@ -37,6 +37,11 @@
       options = [  "nosuid" "nodev" "nofail" ];
    };
 
+  fileSystems. "/mnt/bine2" =
+    { device = "/dev/disk/by-uuid/cbcab1b2-db82-4220-9376-0d881d56c5ca";
+      fsType = "ext4";
+      options = [ "nosuid" "nodev" "nofail" ];
+   };
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
