@@ -28,7 +28,7 @@
     };
     nvidia = {
       open = true;
-      nvidiaSettings = true;
+      nvidiaSettings = false;
       modesetting.enable = true;
       powerManagement.enable = true;
       forceFullCompositionPipeline = true;
@@ -39,10 +39,11 @@
         settingsSha256 = "sha256-6n9mVkEL39wJj5FB1HBml7TTJhNAhS/j5hqpNGFQE4w=";
         sha256_aarch64 = lib.fakeSha256;
         persistencedSha256 = lib.fakeSha256;
+
       };
       prime = {
-       # sync.enable = true;
-        nvidiaBusId = "PCI:14:0:0";
+        sync.enable = true;
+        nvidiaBusId = "PCI:01:0:0";
         intelBusId = "PCI:0:2:0";
       };
     };

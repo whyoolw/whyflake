@@ -1,6 +1,7 @@
 { config
 , pkgs
 , curversion
+, inputs
 , ... 
 }:
 
@@ -18,6 +19,7 @@
       ./modules/auto-cpufreq.nix
       ./modules/gpu.nix
       ./modules/sound.nix
+      ./modules/thinkfan.nix
     ];
 
   nix.settings = {

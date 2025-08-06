@@ -10,15 +10,16 @@
     wget 
     unzip
     unrar
-    #materialgram
-    telegram-desktop
+    materialgram
+    #telegram-desktop
     xdg-utils
     imv
-    mpv
+    #mpv
+    celluloid
     hyprpicker
     rofi-wayland
     qbittorrent
-    btop
+    (pkgs.btop.override { cudaSupport = true; })
     veracrypt
     swww
     clipman
@@ -26,7 +27,7 @@
     hyprshot
     grim
     hyprpicker
-    vscode
+    vscodium
     discord
     nautilus
     nemo
@@ -50,7 +51,6 @@
     pulseaudio
     swaynotificationcenter
     obs-studio
-    oh-my-fish
     gimp
     onlyoffice-bin
     onefetch
@@ -59,9 +59,11 @@
     yt-dlp
     prismlauncher
     fzf
-    hyprland
+    #hyprland
     clipse
     xwayland-satellite
-    
+    fuzzel
+    gotop
+    #nvtopPackages.full
   ];
 }

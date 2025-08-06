@@ -21,7 +21,6 @@ ext jsonc, has nvim, flag f = nvim "$@"
 label editor = "$EDITOR" -- "$@"
 label pager  = "$PAGER" -- "$@"'';
 
-
 home.file.".config/ranger/rc.conf".text = lib.mkForce ''
 
 
@@ -29,7 +28,7 @@ set preview_images true
 set preview_images_method kitty
 default_linemode devicons
 set show_hidden true
-set preview_script /home/whyoolw/.config/ranger/scope.sh
+#set preview_script /home/whyoolw/.config/ranger/scope.sh
 
 # map cd
 map gc cd ~/.config
@@ -43,6 +42,7 @@ map gD cd ~/Documents
 map gp cd ~/Pictures
 map gv cd ~/Videos
 map gm cd /mnt/
+map gM cd /run/media/
 map gP cd /mnt/bine4/others/rt4fht
 map gt cd ~/Templates
 map gl cd ~/.local/share
@@ -50,7 +50,8 @@ map gw cd ~/Pictures/wallpaper
 map zz shell zip archive.zip %s
 map zt shell tar -cvzf archive.tar.gz %s
 map zx shell 7z a archive.7z %s
-map D delete %s
+#map D delete %s
+map D shell mv %s /home/whyoolw/.local/share/Trash/files/
 map F shell file-roller %s
 map X shell du -sh %s && sleep 1
 map x shell nvim %s
@@ -62,7 +63,7 @@ map <C-F> shell fzf
 map <C-e> shell /mnt/bine4/PortProton/data/scripts/start.sh %s --and-exit
 map <C-d> shell dragon-drop -a -x %p --and-exit
 
- map pz extract %s
+map pz extract %s
 
 '';
   

@@ -4,65 +4,93 @@
     enable = true;
     package = pkgs.waybar;
   };
-  home.file.".config/waybar/config.jsonc".text = ''// -*- mode: jsonc -*-
+  home.file.".config/waybar/config.jsonc".text = ''
+ // -*- mode: jsonc -*-
 {	
-		"width": 620,
-		"height": 0,
+		"width": 1400,
+		"height": 25,
     		"layer": "top",
     		"position": "top",
 		"exclusive": true,
 		"passthrough": false,
-		"spacing": 5,
-		"margin-bottom": 0,
-		"margin-top": 0,
+		"margin-top": 6,
+		"spacing": 8,
 		"fixed-center": true,
 		"reload_style_on_change": true,
-		"modules-left": ["custom/notifications","tray", "niri/language" ],
+		"modules-left": [
+			"custom/notifications",
+			"custom/sep",
+			"tray",
+			"custom/sep",
+			"niri/language",
+			"niri/window" ],
 		"modules-center": [
 			"clock",
 			],
 		"modules-right": [
-			
-			"backlight",
-			"pulseaudio",
-			"battery",
+			"privacy","custom/sep",
+			"pulseaudio","custom/sep",
+			"backlight","custom/sep",
+			"battery","custom/sep",
 			"network",
 
 			],
-
-
+ 		/*"custom/sep": {
+			"format": "|",
+			"tooltip": false,
+		},*/
+"niri/window": {
+    "format": "{app_id}",
+    "icon": true,
+    "icon-size": 14,
+    "seperate-outputs": false,
+"rewrite": {
+	"io.github.kukuruzka165.materialgram": "materialgram",
+	"com.obsproject.Studio": "obs",
+	"com.github.th_ch.youtube_music": "ytm",
+},
+  },
 
 "niri/workspaces": {
-  "disable-scroll": true,
-  "show-special": true,
-  "on-scroll-up": "hyprctl dispatch workspace -1",
-  "on-scroll-down": "hyprctl dispatch workspace +1",
+  "disable-scroll": false,
+  "show-special": false,
 	"format": "{icon}",
 		"format-icons": {
-			"1": "",
-			"2": "",
-			"3": "",
-			"4": "",
-			"5": "",
-			"6": "",
-			"7": "",
-			"8": "",
-			"9": "",
-			"10": "",
-			"special": "",
+		"active": "1",
+		"default": "0"
 		},
-       "persistent-workspaces": {
-             "*": 1
-       }
 },
-
-
+	"privacy": {
+			"icon-spacing": 10,
+			"icon-size": 12,
+			"transition-duration": 250,
+			"modules": [
+				{
+					"type": "screenshare",
+					"tooltip": true,
+					"tooltip-icon-size": 24
+				},
+				{
+					"type": "audio-in",
+					"tooltip": true,
+					"tooltip-icon-size": 24
+				}
+			],
+			"ignore-monitor": true,
+			"ignore": [
+				{
+					"type": "screenshare",
+					"name": "obs"
+				}
+			]
+		},
 	"network": {
-        	"format-wifi": "󰤨 ",
-        	"format-ethernet": " ",
-        	"format-linked": " ",
-        	"format-disconnected": "󰤭 ",
-          "on-click": "python ~/.config/rofi/network/network.py"
+        	"format-wifi": "󰤯",
+        	"format-ethernet": "󰈀",
+        	"format-linked": "󰈀",
+        	"format-disconnected": "󰤮",
+          "on-click": "python ~/.config/rofi/network/network.py",
+	  "on-click-right": "/mnt/bine4/scripts/wallpaperkonachan.bash",
 	},
 
  
@@ -70,14 +98,10 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='#DB4740'>󰂜</span>",
-      "none": "󰂜",
-      "dnd-notification":"<span foreground='#DB4740'></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='#DB4740'></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='#DB4740'></span>",
-      "dnd-inhibited-none": ""
+      "notification": "<span foreground='#DB4740'></span>",
+      "none": "",
+      "dnd-notification":"<span foreground='#DB4740'></span>",
+      "dnd-none": "",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -86,126 +110,72 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-
-
-"group/powerB": {
-	 "orientation": "horizontal",
-	 "drawer": {
-         "transition-duration": 500,
-         "transition-left-to-right": true,
-     	 },
-	 
-	 "modules": [
-	"hyprland/language",
-	"custom/power",
-        "custom/lock",
-        "custom/reboot",
-        "custom/logout",
-        "custom/sleep"
-    ]
-
-},
-"custom/power": {
-"format": "  ",
-"on-double-click": "systemctl poweroff",
-},
-"custom/lock": {
-"format": "  ",
-"on-double-click": "hyprlock",
-},
-
-"custom/reboot": {
-"format": "  ",
-"on-double-click": "systemctl reboot",
-},
-
-"custom/logout": {
-"format": " 󰍃 ",
-"on-double-click": "hyprctl dispatch exit",
-},
-
-"custom/sleep": {
-"format": "󰒲 ",
-"on-double-click": "systemctl suspend & hyprlock",
-},
-
-	"group/ttray": {
-		"orientation": "horizontal",
-		"modules": [
-			"tray",
-			"battery",
-			"backlight",
-			"pulseaudio",
-			"network"
-		]
-	},
 	"tray": {
-		"icon-size": 16,
-		"spacing": 8,
-		"icon-theme": "Skeuowaita"
+		"icon-size": 14,
+		"spacing": 5,
 	},
     
 		"clock": {
-			"format": "{:%H:%M:%S}",
+			"format": "{:%H:%M:%S  %d.%m.%y}",
 			"tooltip-format": "{:%OI:%M:%S}",
    		"timezone": "Europe/Riga",
     		"interval": 1,
 		"tooltip": "false",
-        	"format-alt": "{:%d.%m.%y}",
+     //   	"format-alt": "{:%d.%m.%y}",
     "on-click-right": "bash ~/.config/rofi/calendar/calendar.sh"
 
 		},
 
 	
      "pulseaudio": {
-		"format": " {icon} {volume} {format_source}",
-        	"format-muted": "󰝟 ",
-		"format-source": "󰍬 ",
-		"format-source-muted": "󰍭 ",
+		"format": "{volume} {format_source}",
+        	"format-muted": "MUTE",
+		"format-source": "1",
+		"format-source-muted": "0",
 		"format-icons": {
-		"default": ["󰕿 ", "󰖀 ", "󰕾 "]},
-		"on-click": "pavucontrol",
-    		"tooltip-format": "{volume}%"
+			"default": ["1", "2", "3"]},
+			"on-click": "pavucontrol",
+    			"tooltip-format": "{volume}%"
   },
  
         	
     	"niri/language": {
         	"format": "{}",
-			"format-en": "en",
-			"format-ru": "ru"
+			"format-en": "󰑂 ",
+			"format-ru": "󰑀 "
 			    	},
-    "battery": {
-	    "interval": 5,
-        "states": {
-            "warning": 40,
-            "critical": 25
-        },
-        "format": "  {icon} {capacity}",
-	"format-alt": "{icon} {capacity}",
-        "format-charging":"{icon} ",
-        "format-plugged": "{icon} ",
-        "format-full": "{icon} !",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip-format": "{}"
-    },
+ 	"battery": {
+		"interval": 5,
+		"states": {
+			"warning": 40,
+			"critical": 20,
+	},
+		"format": "{capacity}",
+		"format-icons": ["0", "1", "2", "3", "4"],
+		"format-time": "{H}h {M}m",
+		"tooltip-format": "{capacity} {power}w {time}",
+		"tooltip-format-charging": "{capacity}% (charging) {time}",
+},
+
 
     "backlight": {
     "device": "intel_backlight",
-"format": "{percent} {icon}",
-    "format-icons": ["󰃜","󰃝","󰃞"],
+"format": "{percent}",
+    "format-icons": ["1","2","3"],
     "on-scroll-up":   "brightnessctl s 1%+",
     "on-scroll-down": "brightnessctl s 1%-",
     "on-click-right": "brightnessctl s 0"
 },
 
 }
+
 '';
 
 home.file.".config/waybar/style.css".text = ''
 * {
-	font-family: googlesans;
+	font-family: Google Sans;
 	font-weight: bold;
-	border-radius: 0;
+	border-radius: 12;
 	font-size: 14px;
 }
 
@@ -217,51 +187,57 @@ window#waybar {
 
 @import "/home/whyoolw/.cache/wal/colors-waybar.css";
 
-
 #workspaces {
-	background-color: @background;
-	font-family: 'Symbols Nerd Font';
-	font-size: 13pt;
-	padding: 0 0 0 8;
+	font-size: 11pt;
+		padding: 0 0 0 0;
+	margin: 0 0 0 0;
 }
 
 #workspaces button {
-    padding: 0 0 0 6;
-    margin: 8px 3px;
-    border-radius: 32px;
+    border-radius: 16px;
     color: @color11;
     background-color: @color4;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.8s ease-in-out;
+		padding: 0 0 0 0;
+	margin: 0 0 0 0;
 
 }
 
 #workspaces button:hover {
 	background-color: @color2;
 	color: @color2;
-	border-radius: 16;
+	border-radius: 4;
+	transition: all 0.3s ease-in-out;
+		padding: 0 0 0 0;
+	margin: 0 0 0 0;
 
 }
 
 #workspaces button.active {
     background-color: @color2;
-    padding: 0px 16px;
+    padding: 0px 10px 0 10;
     border-radius: 16px;
-    opacity: 1.0;
-        transition: all 0.3s ease-in-out;
+        transition: all .4s ease-in-out;
 
 }
 
+#window{
+	background: @background;
+	color: @color6;
+	padding: 0 2 0 2;
+	margin: 0 0 0 0;
+}
 #tray {
 	background: @background;
 	color: @color9;
-	padding: 0 0 0 0;
-	margin: 3 0 0 0;
+	padding: 0 2 0 2;
+	margin: 0 0 0 0;
 
 }
 #battery {
 	background: @background;
 	color: @color6;
-	padding: 0 1 0 1;
+	padding: 0 0 0 0;
 }
 
 #network {
@@ -272,13 +248,15 @@ window#waybar {
 
 #custom-notifications {
 	color: @color2;
-	margin: 5 5 0 8;
-	font-size: 14pt;
+	margin: 0 2 0 8;
 }
+
+
 
 #pulseaudio {
 	background: @background;
 	color: @color6;
+	margin: 0 0 0 0;
 
 }
 
@@ -286,21 +264,28 @@ window#waybar {
 	background: @background;
 	color: @color6;
 	font-size: 16px;
-
 }
 
 #language {
 	background: @background;
 	color: @color6;
-	padding: 0 0 0 8;
-	margin: 4 0 0 0;
-	font-size: 15px;
 }
 #backlight {
 	background: @background;
 	color: @color6;
-	margin: 0 6 0 1px;
+	margin: 0 0 0 0;
 
+}
+
+#privacy{
+	background: @background;
+	color: @color6;
+	margin: 2 4 0 1;
+}
+
+#custom-sep {
+	background: @background;
+	color: @color6;
 }
 '';
 
