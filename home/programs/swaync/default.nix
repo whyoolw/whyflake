@@ -2,138 +2,69 @@
 {
 home.file.".config/swaync/config.jsonc".text = ''
 {
-  #"$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "center",
-  "positionY": "top",
-	"cssPriority": "user",
+    "control-center-height": 420,
+    "notification-limit": 5,
+    "control-center-layer": "overlay",
+    "control-center-margin-top": 0,
+    "control-center-margin-left": 0,
+    "control-center-margin-right": 0,
+    "control-center-margin-top": 0,
+    "control-center-width": 400,
+    "cssPriority": "application",
+    "control-center-positionX": "left",
+    "control-center-positionY": "top",
+    "fit-to-screen": false,
+    "hide-on-action": false,
+    "image-visibility": "when-available",
+    "keyboard-shortcuts": true,
+    "notification-icon-size": 24,
+    "notification-inline-replies": true,
+    "notification-visibility": {},
+    "notification-window-width": 400,
+    "notification-margin-bottom": 100,
+    "notification-margin-left": 0,
+    "control-center-margin-right": 0,
+    "control-center-margin-top": 0,
 
-  "control-center-width": 580,
-  "control-center-height": 520, 
-  "control-center-margin-top": 2,
-  "control-center-margin-bottom": 2,
-  "control-center-margin-right": 1,
-  "control-center-margin-left": 0,
+    "positionX": "left",
+    "positionY": "bottom",
+    "script-fail-notify": false,
+    "scripts": {},
+    "timeout": 6,
+    "timeout-critical": 0,
+    "timeout-low": 5,
+    "transition-time": 200,
+    "widget-config": {
 
-  "notification-window-width": 400,
-  "notification-icon-size": 48,
-  "notification-body-image-height": 160,
-  "notification-body-image-width": 200,
-
-  "timeout": 4,
-  "timeout-low": 2,
-  "timeout-critical": 6,
-  
-  "fit-to-screen": false,
-  "keyboard-shortcuts": true,
-  "image-visibility": "when-available",
-  "transition-time": 200,
-  "hide-on-clear": false,
-  "hide-on-action": false,
-  "script-fail-notify": true,
-  "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    }
-  },
-  "notification-visibility": {
-    "example-name": {
-      "state": "muted",
-      "urgency": "Low",
-      "app-name": "Spotify"
-    }
-  },
-  "widgets": [
-    "volume",
-    "mpris",
-    "title",
-    "dnd",
-    "notifications"
-  ],
-  "widget-config": {
-    "title": {
-      "text": "Notifications",
-      "clear-all-button": true,
-      "button-text": " Clear "
-    },
-    "dnd": {
-      "text": "Do not disturb"
-    },
-    "label": {
-      "max-lines": 1,
-      "text": " "
-    },
-    "volume": {
-            "label": "󰕾 ",
-	    "icon-theme": "Rewaita"
-
+        "mpris": {
+            "image-radius": 24,
+            "image-size": 64,
+            "blacklist": ["playerctld"]
         },
-    "mpris": {
-      "image-size": 76,
-      "image-radius": 12
-    },
-    "volume": {
-      "label": "󰕾",
-      		"icon-theme": "Rewaita",
-        "show-per-app": true
-    },
-    "buttons-grid": {
-      "actions": [
-        {
-          "label": " ",
-          "command": "amixer set Master toggle"
-        },
-        {
-          "label": "",
-          "command": "amixer set Capture toggle"
-        },
-        {
-          "label": " ",
-          "command": "nm-connection-editor"
-        },
-        {
-          "label": "󰂯",
-          "command": "blueman-manager"
-        },
-        {
-          "label": "󰏘",
-          "command": "nwg-look"
+			"dnd": {
+			"text": "dnd:w"
+		},
+        "title": {
+            "text": "Notifications",
+            "button-text": "Clear",
+            "clear-all-button": true
         }
-        
-      ]
-    }
-  }
+    },
+    "widgets": ["dnd", "title", "notifications", "mpris"]
+
+
 }
 
+
 '';
-home.file.".config/swaync/style.css".text = ''@define-color foreground #dbd6cb;
-@define-color background #090c09;
-@define-color cursor #dbd6cb;
+home.file.".config/swaync/style.css".text = ''
+@import "/home/whyoolw/.cache/wal/colors-waybar.css";
 
-@define-color color0 #090c09;
-@define-color color1 #9D6A52;
-@define-color color2 #CD6845;
-@define-color color3 #AF995E;
-@define-color color4 #E19C64;
-@define-color color5 #3D7785;
-@define-color color6 #4CA2B3;
-@define-color color7 #dbd6cb;
-@define-color color8 #99958e;
-@define-color color9 #9D6A52;
-@define-color color10 #CD6845;
-@define-color color11 #AF995E;
-@define-color color12 #E19C64;
-@define-color color13 #3D7785;
-@define-color color14 #4CA2B3;
-@define-color color15 #dbd6cb;
 
-/*
- * vim: ft=less
- */
 
-@define-color noti-border-color rgba(255, 255, 255, 0.9);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
+@define-color noti-border-color @color2;
+@define-color noti-close-bg @color10;
+@define-color noti-close-bg-hover @color13;
 @define-color noti-bg-hover @color5;
 @define-color noti-bg-focus @color3;
 @define-color noti-urgent #BF616A;
@@ -151,7 +82,6 @@ home.file.".config/swaync/style.css".text = ''@define-color foreground #dbd6cb;
 
 .notification-row:focus,
 .notification-row:hover {
-  background: @noti-bg-focus;
 }
 
 .notification {
@@ -169,7 +99,6 @@ home.file.".config/swaync/style.css".text = ''@define-color foreground #dbd6cb;
 }
 
 .notification-content {
-  background: transparent;
   padding: 6px;
 }
 
@@ -281,7 +210,7 @@ home.file.".config/swaync/style.css".text = ''@define-color foreground #dbd6cb;
 }
 
 .control-center-list {
-  background: transparent;
+  background: @background;
 }
 
 .floating-notifications {
@@ -355,6 +284,5 @@ home.file.".config/swaync/style.css".text = ''@define-color foreground #dbd6cb;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
-
 '';
 }

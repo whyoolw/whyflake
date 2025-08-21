@@ -12,5 +12,7 @@
     #./swaync
     ./mangohud
     ./niri
+    #./thinkfan
+    #./zen-browser
   ];
 }

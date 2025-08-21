@@ -18,7 +18,7 @@
     hyprpicker
     rofi-wayland
     qbittorrent
-    btop
+    (pkgs.btop.override { cudaSupport = true; })
     veracrypt
     swww
     clipman
@@ -26,7 +26,7 @@
     hyprshot
     grim
     hyprpicker
-    vscode
+    vscodium
     discord
     nautilus
     nemo
@@ -59,9 +59,11 @@
     yt-dlp
     prismlauncher
     fzf
-    hyprland
+    #hyprland
     clipse
     xwayland-satellite
-    
+    fuzzel
+    gotop
+    #nvtopPackages.full
   ];
 }

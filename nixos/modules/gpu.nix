@@ -28,17 +28,17 @@
     };
     nvidia = {
       open = true;
-      nvidiaSettings = true;
+      nvidiaSettings = false;
       modesetting.enable = true;
       powerManagement.enable = true;
       forceFullCompositionPipeline = true;
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "575.51.02";
-        sha256_64bit = "sha256-XZ0N8ISmoAC8p28DrGHk/YN1rJsInJ2dZNL8O+Tuaa0=";
-        openSha256 = "sha256-NQg+QDm9Gt+5bapbUO96UFsPnz1hG1dtEwT/g/vKHkw=";
-        settingsSha256 = "sha256-6n9mVkEL39wJj5FB1HBml7TTJhNAhS/j5hqpNGFQE4w=";
-        sha256_aarch64 = lib.fakeSha256;
+        version = "575.64";
+        sha256_64bit = "sha256-6wG8/nOwbH0ktgg8J+ZBT2l5VC8G5lYBQhtkzMCtaLE=";
+        openSha256 = "sha256-y93FdR5TZuurDlxc/p5D5+a7OH93qU4hwQqMXorcs/g=";
+        settingsSha256 = lib.fakeSha256;
         persistencedSha256 = lib.fakeSha256;
+        sha256_aarch64 = lib.fakeSha256;
       };
       prime = {
        # sync.enable = true;
