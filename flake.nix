@@ -4,8 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    hyprland.url = "github:hyprwm/Hyprland";
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    #hyprland.url = "github:hyprwm/Hyprland";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,12 +20,12 @@
     self
   , nixpkgs
   , home-manager
-  , hyprland
+  #, hyprland
   , ... }@inputs:
   
   let
     system = "x86_64-linux"; 
-    curversion = "24.11";
+    curversion = "25.05";
     pkgs = import nixpkgs {
       inherit system;
       config = {

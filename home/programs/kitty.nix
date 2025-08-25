@@ -13,9 +13,12 @@ font_size 10.0
 
 editor nvim
 
-background_opacity 0.9
+background_opacity 1
 
 window_margin_width 15
+
+hide_window_decorations yes 
+
 
 
 include /home/whyoolw/.cache/wal/colors-kitty.conf

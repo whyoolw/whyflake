@@ -4,7 +4,7 @@
     ./pkgs
     ./programs
     ./gtk
-  ];
+    ];
   home = {
     stateVersion = "${curversion}";
     username = "whyoolw";

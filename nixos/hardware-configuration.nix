@@ -13,35 +13,29 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4804d829-7f68-4140-8e1d-29e63ee57407";
-      fsType = "ext4";
+ fileSystems."/" =
+    { device = "/dev/disk/by-uuid/1ea718ec-933c-4331-9370-3ff48d2d01a3";
+      fsType = "f2fs";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/CEF1-8965";
+    { device = "/dev/disk/by-uuid/8A97-0592";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-
-  fileSystems."/mnt/bine4" = 
-   { device = "/dev/disk/by-uuid/5896645a-9e7f-4846-a1d3-1625ef22fd30";
+    fileSystems."/mnt/bine4" =
+    { device = "/dev/disk/by-uuid/d11ec9a4-cbdc-4bfd-8043-eafc86082c07";
       fsType = "ext4";
-      options = [  "nosuid" "nodev" "nofail" ];
-   };
+      options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+    };
 
-  fileSystems."/mnt/bineM" = 
-   { device = "/dev/disk/by-uuid/cff08dd0-0c9d-4988-beb6-c72f7e93d912";
-      fsType = "ext4";
-      options = [  "nosuid" "nodev" "nofail" ];
-   };
+    fileSystems."/mnt/bine2" =
+    { device = "/dev/disk/by-uuid/7903002c-d36a-4e62-9b93-cfbe95eafc23";
+      fsType = "f2fs";
+      options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+    };
 
-  fileSystems. "/mnt/bine2" =
-    { device = "/dev/disk/by-uuid/cbcab1b2-db82-4220-9376-0d881d56c5ca";
-      fsType = "ext4";
-      options = [ "nosuid" "nodev" "nofail" ];
-   };
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

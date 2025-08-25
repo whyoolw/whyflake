@@ -1,16 +1,19 @@
 { ... }:
 {
   imports = [
-    ./fish
+    ./fish.nix
     #./hyprland
-    ./kitty
-    ./ranger
-    ./rofi
-    ./waybar
-    ./nvim
-    ./fastfetch
+    ./kitty.nix
+    ./ranger.nix
+    ./rofi.nix
+    ./waybar.nix
+    ./nvim.nix
+    ./fastfetch.nix
     #./swaync
-    ./mangohud
-    ./niri
+    ./mangohud.nix
+    ./niri.nix
+    #./thinkfan
+    #./zen-browser
+    ./fuzzel.nix
   ];
 }

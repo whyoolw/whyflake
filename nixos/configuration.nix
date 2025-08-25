@@ -1,6 +1,7 @@
 { config
 , pkgs
 , curversion
+, inputs
 , ... 
 }:
 
@@ -18,6 +19,7 @@
       ./modules/auto-cpufreq.nix
       ./modules/gpu.nix
       ./modules/sound.nix
+      ./modules/thinkfan.nix
     ];
 
   nix.settings = {
@@ -45,6 +47,7 @@
       enable = true;
       videoDrivers = [ "nvidia" ];
       displayManager.gdm.enable = true;
+      #services.displayManager.sddm.wayland.enable = true;
       #desktopManager.gnome.enable = true;
       xkb.layout = "us";
       xkb.variant = "";

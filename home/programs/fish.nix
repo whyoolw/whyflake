@@ -7,7 +7,7 @@
       b = "btop";
       ":q" = "exit";
       resp = "systemctl --user restart pipewire pipewire-pulse wireplumber";
-      rebuild = "sudo nixos-rebuild switch --flake ./#thinkpad --show-trace";
+      rebuild = "git add . && sudo nixos-rebuild switch --flake ./#thinkpad --show-trace";
     };
     functions = {
       fish_greeting = {

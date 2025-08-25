@@ -8,6 +8,7 @@ background_alpha=0.2
 round_corners=0
 background_alpha=0.2
 background_color=020202
+
 font_size=22
 text_color=FFFFFF
 position=top-left
@@ -20,8 +21,10 @@ gpu_stats
 gpu_load_change
 gpu_load_value=50,90
 gpu_load_color=FFFFFF,FFAA7F,CC0000
+throttling_status
 gpu_temp
 gpu_mem_temp
+gpu_power
 gpu_color=2E9762
 cpu_text=CPU
 cpu_stats
@@ -34,6 +37,7 @@ cpu_temp
 cpu_color=2E97CB
 vram
 vram_color=AD64C1
+vram_color=AD64C1
 ram
 ram_color=C26693
 fps
@@ -43,17 +47,32 @@ arch
 frame_timing
 frametime_color=00FF00
 fps_limit_method=late
-toggle_fps_limit=none
-show_fps_limit
-fps_limit=0,240,144,90,60,30
+toggle_fps_limit=Shift_R+F7
+
+fps_limit=0,120,90,75,60
+custom_text=-
+exec=cat /home/whyoolw/.config/goverlay/distro
+custom_text=-
+exec=uname -r
 fps_color_change
 fps_color=B22222,FDFD09,39F900
-fps_value=30,60
+fps_value=60,120
 #offset=0
+
+
+
+
+
+time#
+
+
 output_folder=/home/whyoolw
 log_duration=0
 autostart_log=0
 log_interval=0
 toggle_logging=Shift_L+F2
+
+blacklist=pamac-manager,lact,ghb,bitwig-studio,ptyxis,yumex
+
 '';
 }
