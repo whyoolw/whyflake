@@ -1,6 +1,6 @@
 {pkgs, ... }:
 {
-home.file.".config/swaync/config.jsonc".text = ''
+home.file.".config/swaync/config.json".text = ''
 {
     "control-center-height": 420,
     "notification-limit": 5,
@@ -18,18 +18,17 @@ home.file.".config/swaync/config.jsonc".text = ''
     "image-visibility": "when-available",
     "keyboard-shortcuts": true,
     "notification-icon-size": 24,
-    "notification-inline-replies": true,
-    "notification-visibility": {},
+    "notification-inline-replies": false,
+    //"notification-visibility": {},
     "notification-window-width": 400,
     "notification-margin-bottom": 100,
     "notification-margin-left": 0,
     "control-center-margin-right": 0,
     "control-center-margin-top": 0,
+      "image-visibility": "when-available",
 
     "positionX": "left",
     "positionY": "bottom",
-    "script-fail-notify": false,
-    "scripts": {},
     "timeout": 6,
     "timeout-critical": 0,
     "timeout-low": 5,
@@ -41,9 +40,7 @@ home.file.".config/swaync/config.jsonc".text = ''
             "image-size": 64,
             "blacklist": ["playerctld"]
         },
-			"dnd": {
-			"text": "dnd:w"
-		},
+
         "title": {
             "text": "Notifications",
             "button-text": "Clear",
@@ -54,13 +51,9 @@ home.file.".config/swaync/config.jsonc".text = ''
 
 
 }
-
-
 '';
 home.file.".config/swaync/style.css".text = ''
 @import "/home/whyoolw/.cache/wal/colors-waybar.css";
-
-
 
 @define-color noti-border-color @color2;
 @define-color noti-close-bg @color10;

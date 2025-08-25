@@ -3,8 +3,6 @@
   home.packages = with pkgs; [
     fastfetch
     pavucontrol
-    google-chrome
-    firefox
     git
     gh
     wget 
@@ -30,11 +28,11 @@
     vscodium
     discord
     nautilus
-    nemo
+    #nemo
     #gnome-tweaks
     gpu-screen-recorder-gtk
     #spotify
-    spicetify-cli
+    #spicetify-cli
     wl-clipboard
     cliphist
     xclip
@@ -51,21 +49,16 @@
     pulseaudio
     swaynotificationcenter
     obs-studio
-    oh-my-fish
-    gimp
+    #oh-my-fish
+    #gimp
     onlyoffice-bin
     onefetch
-    lutris
     tokei
-    yt-dlp
     prismlauncher
     fzf
-    #hyprland
     clipse
     xwayland-satellite
-    #fuzzel
-    gotop
     #nvtopPackages.full
-    udisks2
+    libnotify
   ];
 }

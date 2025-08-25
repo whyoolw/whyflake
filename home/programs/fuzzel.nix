@@ -13,6 +13,7 @@
         terminal = "${pkgs.kitty}/bin/kitty";
         layer = "overlay";
         dpi-aware = "no";
+        fields = "name";
         width = "21";
       };
         colors = {

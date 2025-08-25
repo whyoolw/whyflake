@@ -3,12 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.6.0";
     #nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     #hyprland.url = "github:hyprwm/Hyprland";
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +23,7 @@
   
   let
     system = "x86_64-linux"; 
-    curversion = "25.05";
+    curversion = "25.11";
     pkgs = import nixpkgs {
       inherit system;
       config = {
@@ -47,6 +45,7 @@
       inherit inputs system pkgs curversion;
       };
       modules = [
+        inputs.nix-flatpak.nixosModules.nix-flatpak
         ./nixos/configuration.nix
         home-manager.nixosModules.home-manager
         { 
@@ -54,7 +53,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.whyoolw = import (./. + "/home/home.nix") ;
-            extraSpecialArgs = { inherit curversion; };
+            extraSpecialArgs = { inherit curversion inputs ; };
           };
         }
       ];

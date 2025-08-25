@@ -40,15 +40,32 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services = {
-    flatpak.enable = true;
+    flatpak = {
+      enable = true;
+      packages = [
+        "com.github.neithern.g4music"
+        "com.github.tchx84.Flatseal"
+        "com.heroicgameslauncher.hgl"
+        "io.github.jonmagon.kdiskmark"
+        "md.obsidian.Obsidian"
+        "net.blockbench.Blockbench"
+        "org.gimp.GIMP" 
+        "org.kde.kdenlive"
+        "org.onlyoffice.desktopeditors"
+        "org.vinegarhq.Sober"
+        "ro.go.hmlendea.DL-Desktop"
+        "sh.ppy.osu"
+      ];
+    };
     fstrim.enable = true;
     printing.enable = false;
+    displayManager.gdm.enable = true;
+      #displayManager.sddm.wayland.enable = true;
+      #services.displayManager.sddm.enable = true;
+      #desktopManager.gnome.enable = true;
     xserver = {
       enable = true;
       videoDrivers = [ "nvidia" ];
-      displayManager.gdm.enable = true;
-      #services.displayManager.sddm.wayland.enable = true;
-      #desktopManager.gnome.enable = true;
       xkb.layout = "us";
       xkb.variant = "";
     };
@@ -83,6 +100,4 @@
       xdg-desktop-portal-wlr
     ];
   };
-
-
 }
