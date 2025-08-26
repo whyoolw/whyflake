@@ -60,5 +60,6 @@
     xwayland-satellite
     #nvtopPackages.full
     libnotify
+    gsimplecal
   ];
 }

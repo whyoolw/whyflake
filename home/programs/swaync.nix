@@ -3,14 +3,13 @@
 home.file.".config/swaync/config.json".text = ''
 {
     "control-center-height": 420,
-    "notification-limit": 5,
+    "notification-limit": 2,
     "control-center-layer": "overlay",
     "control-center-margin-top": 0,
     "control-center-margin-left": 0,
     "control-center-margin-right": 0,
     "control-center-margin-top": 0,
     "control-center-width": 400,
-    "cssPriority": "application",
     "control-center-positionX": "left",
     "control-center-positionY": "top",
     "fit-to-screen": false,
@@ -25,7 +24,6 @@ home.file.".config/swaync/config.json".text = ''
     "notification-margin-left": 0,
     "control-center-margin-right": 0,
     "control-center-margin-top": 0,
-      "image-visibility": "when-available",
 
     "positionX": "left",
     "positionY": "bottom",

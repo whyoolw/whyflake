@@ -1,10 +1,11 @@
 { curversion, ... }: 
 {
   imports = [
-    ./pkgs
+    #./pkgs
     ./programs
     ./gtk
     ./enviroment/xdg
+    ./packages.nix
     ];
   home = {
     stateVersion = "${curversion}";
@@ -12,7 +13,7 @@
     homeDirectory = "/home/whyoolw";
     sessionVariables = {
       XCURSOR_THEMES = "Bibata-Modern-Ice";
-      XCURSOR_SIZE = "18";
+      XCURSOR_SIZE = "20";
     };
   };
 }

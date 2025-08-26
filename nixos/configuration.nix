@@ -61,7 +61,7 @@
     printing.enable = false;
     displayManager.gdm.enable = true;
       #displayManager.sddm.wayland.enable = true;
-      #services.displayManager.sddm.enable = true;
+      #displayManager.sddm.enable = true;
       #desktopManager.gnome.enable = true;
     xserver = {
       enable = true;

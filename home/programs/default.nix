@@ -15,5 +15,6 @@
     #./thinkfan.nix
     ./fuzzel.nix
     ./zen-browser.nix
+    #./waybar-dec.nix
   ];
 }

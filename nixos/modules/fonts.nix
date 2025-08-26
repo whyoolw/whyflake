@@ -25,6 +25,5 @@
       hack-font
       open-sans
     ]);
-    
   };
 }

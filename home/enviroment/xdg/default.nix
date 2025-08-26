@@ -32,6 +32,16 @@
         settings.Keywords = "nautilus;files";
       };
     };
+    desktopEntries = {
+      Vscodium = {
+        name = "vscodium";
+        genericName = "Code";
+        exec = "codium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto %U";
+        terminal = false;
+        categories = ["Application"];
+        settings.Keywords = "code;vscode;vscodium";
+      };
+    };
     mimeApps = {
       enable = true;
       associations.added = {
