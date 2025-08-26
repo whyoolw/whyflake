@@ -9,11 +9,10 @@
     unzip
     unrar
     materialgram
-    #telegram-desktop
     xdg-utils
     imv
-    #mpv
-    celluloid
+    mpv
+    #celluloid
     hyprpicker
     rofi-wayland
     qbittorrent
@@ -21,18 +20,13 @@
     veracrypt
     swww
     clipman
-    #waybar
     hyprshot
     grim
     hyprpicker
     vscodium
     discord
     nautilus
-    #nemo
-    #gnome-tweaks
     gpu-screen-recorder-gtk
-    #spotify
-    #spicetify-cli
     wl-clipboard
     cliphist
     xclip
@@ -49,8 +43,6 @@
     pulseaudio
     swaynotificationcenter
     obs-studio
-    #oh-my-fish
-    #gimp
     onlyoffice-bin
     onefetch
     tokei
@@ -58,7 +50,6 @@
     fzf
     clipse
     xwayland-satellite
-    #nvtopPackages.full
     libnotify
     gsimplecal
   ];

@@ -24,6 +24,7 @@
       proggyfonts
       hack-font
       open-sans
+      source-code-pro
     ]);
   };
 }
